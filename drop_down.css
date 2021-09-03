@@ -1,0 +1,14 @@
+.visible{
+    display:none;
+}
+
+.dropdown-flex{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropdown-box{
+    background-color: rgba(177, 243, 243, 0.767);
+    border:2px solid rgba(77, 77, 77, 0.801);
+}
