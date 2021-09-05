@@ -12,16 +12,41 @@
 }
 
 .dropdown{
-    background-color: rgba(220, 20, 60, 0.699);
-    border:1px solid rgba(128, 128, 128, 0.692);
+   
     position: relative;
     bottom:50px;
     transition: transform 300ms ease-out;
   
 }
 
-.dropdown div{
+ul{ 
+    margin:0;
+    padding:0;
+    list-style-type: none;
+}
+
+.dropdown .item1{
+    animation: scaleAni 300ms ease-in-out;
+}
+.dropdown .item2{
+    animation: scaleAni 400ms ease-in-out;
+}
+.dropdown .item3{
+    animation: scaleAni 500ms ease-in-out;
+}
+.dropdown .item4{
+    animation: scaleAni 600ms ease-in-out;
+}
+.dropdown .item5{
+    animation: scaleAni 700ms ease-in-out;
+}
+
+.dropdown li{
     padding:2px 6px;
+    animation-fill-mode:forwards;
+    background-color: rgba(220, 20, 60, 0.699);
+    border:1px solid rgba(128, 128, 128, 0.692);
+
 }
 
 .transition-slide{
@@ -30,6 +55,15 @@
 }
 
 .visible{
-    opacity: 0;
-    position: absolute;
+  display:none;
+}
+
+@keyframes scaleAni {
+    from {
+        transform:scale(0);
+    }
+
+    to {
+        transform:scale(1);
+    }
 }
