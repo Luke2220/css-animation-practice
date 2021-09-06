@@ -1,0 +1,32 @@
+.menu-trigger{
+    border-radius: 50%;
+    background-color: rgba(150, 5, 150, 0.726);
+    width:40px;
+    height:40px;
+}
+
+.toggleClickAni{
+    animation: clickAni 500ms ease-in-out;
+}
+
+.floating-items > * {
+    border-radius: 50%;
+    width:40px;
+    height:40px;
+    background-color: rgba(112, 4, 112, 0.726);
+    margin:5px 0;
+}
+
+@keyframes clickAni {
+    50%{
+        transform:scale(.50);
+    }
+
+    80%{
+        transform:scale(1.2);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}

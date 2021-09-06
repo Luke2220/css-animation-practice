@@ -3,26 +3,44 @@
     <head>
         <meta charset="UTF-8"></charset>
         <title>CSS Animation Practice</title>
-        <link rel='stylesheet' href='drop_down.css'>
+        <link rel='stylesheet' href='reset.css'>
+        <link rel='stylesheet' href='drop-down/drop_down.css'>
+        <link rel='stylesheet' href='mobile-menu/mobile-menu.css'>
     </head>
 
 
     <body>
 
-        <section class='dropdown-flex'>
-            <section class='dropdown-box'>  
-                <p>Dropdown</p>
+        <section class='flex'>
+            <section class='dropdown-trigger menu-size'>  
+                <p class='align-text'>Dropdown</p>
+                <ul class='dropdown visible'>
+                    <li class='item1 onSelectColor align-text'>Option 1</li>
+                    <li class='item2 onSelectColor align-text'>Option 2</li>
+                    <li class='item3 onSelectColor align-text'>Option 3</li>
+                    <li class='item4 onSelectColor align-text '>Option 4</li>
+                    <li class='item5 onSelectColor align-text'>Option 5</li>
+                </ul>
             </section>
-            <ul class='dropdown visible'>
-                <li class='item1'>Option 1</li>
-                <li class='item2'>Option 2</li>
-                <li class='item3'>Option 3</li>
-                <li class='item4'>Option 4</li>
-                <li class='item5'>Option 5</li>
-            </ul>
+        </section>
+
+        <section>
+            <section class=''>
+                <div class='menu-trigger'>
+                    <p class='align-text'>+</p>
+                </div>
+                <ul class='visible floating-items'>
+                    <li class='align-text item1'>ABC</li>
+                    <li class='align-text item2'>DEF</li>
+                    <li class='align-text item3'>GHI</li>
+                    <li class='align-text item4'>JKL</li>
+                    <li class='align-text item5'>MNO</li>
+                </ul>
+            </section>
         </section>
 
     </body>
 
-    <script src='drop-down.js'></script>
+    <script src='drop-down/drop-down.js'></script>
+    <script src='mobile-menu/mobile-menu.js'></script>
 </html>
