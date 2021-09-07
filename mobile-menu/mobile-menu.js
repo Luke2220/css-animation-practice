@@ -5,8 +5,13 @@ function toggleVisible(element){
     element.classList.toggle('visible');
 }
 
+function toggleBtnClickAni(element){
+    element.classList.toggle('toggleOpenAni');
+    element.classList.toggle('toggleCloseAni');
+}
+
 menuTrigger.addEventListener('click', () =>{
     toggleVisible(floatingButton);
-    menuTrigger.classList.toggle('toggleClickAni');
+    toggleBtnClickAni(menuTrigger);
 })
 

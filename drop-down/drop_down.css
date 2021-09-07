@@ -34,19 +34,19 @@
     background-color: rgba(131, 13, 37, 0.699);
 }
 
-.dropdown .item1{
+ .item1{
     animation: scaleAni 300ms ease-in-out;
 }
-.dropdown .item2{
+ .item2{
     animation: scaleAni 400ms ease-in-out;
 }
-.dropdown .item3{
+ .item3{
     animation: scaleAni 500ms ease-in-out;
 }
-.dropdown .item4{
+ .item4{
     animation: scaleAni 600ms ease-in-out;
 }
-.dropdown .item5{
+ .item5{
     animation: scaleAni 700ms ease-in-out;
 }
 
