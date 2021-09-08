@@ -1,3 +1,9 @@
 .selected-img{
     max-width: 500px;
 }
+
+.prev-img,.next-img{
+    max-width:150px;
+    position:relative;
+    
+}

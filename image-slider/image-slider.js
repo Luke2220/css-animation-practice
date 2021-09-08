@@ -1,13 +1,16 @@
 const selectedImage = document.getElementsByClassName('selected-img')[0];
+const lastImage = document.getElementsByClassName('prev-img')[0];
+const nextImage = document.getElementsByClassName('next-img')[0];
+
 const leftBtn = document.getElementsByClassName('left')[0];
 const rightBtn = document.getElementsByClassName('right')[0];
 
 leftBtn.addEventListener('click', () => {
-    imageFrame.shift('left');
+    imageFrame.changeImage('left');
 })
 
 rightBtn.addEventListener('click', () => {
-    imageFrame.shift('right');
+    imageFrame.changeImage('right');
 })
 
 const imageFrame = (() => {
@@ -17,27 +20,37 @@ const imageFrame = (() => {
     '/home/luke/Desktop/css-animation-images/img4.jpeg'];
 
     let index = 0;
-    setImage();
+    setImage(selectedImage,index);
+    setImage(lastImage, shift('left'));
+    setImage(nextImage, shift('right'));
 
-    function setImage(){
-        selectedImage.setAttribute('src', imgs[index]);
+    function setImage(img,index){
+        img.setAttribute('src', imgs[index]);
+    }
+
+    function changeImage(direction){
+        index = shift(direction);
+        setImage(selectedImage,index);
+        setImage(lastImage, shift('left'));
+        setImage(nextImage, shift('right'));
     }
 
     function shift(direction){
+        let counter = index;
         if (direction == 'right'){
-            if (index >= imgs.length-1){
-                index = 0;
+            if (counter >= imgs.length-1){
+                counter = 0;
             } else {
-                index += 1;
+                counter += 1;
             }        
         } else {
-            if (index <= 0){
-                index = imgs.length - 1;
+            if (counter <= 0){
+                counter = imgs.length - 1;
             } else {
-                index -= 1;
+                counter -= 1;
             }
         }
-        setImage();
+        return counter;
     }
-    return {shift}
+    return {changeImage}
 })();
