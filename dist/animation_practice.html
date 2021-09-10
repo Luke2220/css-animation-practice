@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"></charset>
+        <title>CSS Animation Practice</title>
+        <link rel='stylesheet' href='reset.css'>
+        <link rel='stylesheet' href='grid-layout.css'>
+        <link rel='stylesheet' href='../src/drop-down/drop_down.css'>
+        <link rel='stylesheet' href='../src/mobile-menu/mobile-menu.css'>
+        <link rel='stylesheet' href='../src/image-slider/image-slider.css'>
+    </head>
+
+
+    <body>
+
+        <section class='grid-layout'>
+            <section class='row1 flex'>
+                <section class='dropdown-trigger menu-size'>  
+                    <p class='align-text'>Dropdown</p>
+                    <ul class='dropdown visible'>
+                        <li class='item1 onSelectColor align-text'>Option 1</li>
+                        <li class='item2 onSelectColor align-text'>Option 2</li>
+                        <li class='item3 onSelectColor align-text'>Option 3</li>
+                        <li class='item4 onSelectColor align-text '>Option 4</li>
+                        <li class='item5 onSelectColor align-text'>Option 5</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section class='row2'>
+                    <div class='menu-trigger toggleCloseAni'>
+                        <p class='align-text'>+</p>
+                    </div>
+                    <ul class='visible floating-items'>
+                        <li class='align-text onSelectColor item1'><p>ABC</p></li>
+                        <li class='align-text onSelectColor item2'><p>DEF</p></li>
+                        <li class='align-text onSelectColor item3'><p>GHI</p></li>
+                        <li class='align-text onSelectColor item4'><p>JKL</p></li>
+                        <li class='align-text onSelectColor item5'><p>MNO</p></li>
+                    </ul>
+            </section>
+
+            <section class='row3'>
+                <div class='flex'>
+                    <div class='img-frame'>
+                        <img class='prev-img'>
+                        <img class='selected-img'>
+                        <img class='next-img'>
+                    </div>
+                    <section class='carousel-nav'>
+                        <button class="left">Left</button>
+                        <div class='slide-btn'></div>
+                        <div class='slide-btn'></div>
+                        <div class='slide-btn'></div>
+                        <div class='slide-btn'></div>
+                        <button class="right">Right</button>
+                    </section>
+                </div>
+            </section>
+    </section>
+
+    </body>
+
+<script src='main.js'></script>
+
+</html>

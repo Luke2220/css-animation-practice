@@ -1,0 +1,55 @@
+.menu-trigger{
+    border-radius: 50%;
+    background-color: rgba(150, 5, 150, 0.726);
+    width:40px;
+    height:40px;
+}
+
+.toggleOpenAni{
+    animation: clickOpenAni 500ms ease-in-out;
+}
+
+.toggleCloseAni{
+    animation: clickCloseAni 400ms ease-in-out;
+}
+
+.floating-items{
+    padding:0;
+}
+
+.floating-items > * {
+    border-radius: 50%;
+    width:40px;
+    height:40px;
+    background-color: rgba(112, 4, 112, 0.726);
+    margin:5px 0;
+    list-style-type: none;
+}
+
+.menu-trigger p,.floating-items p{
+    padding-top:10px;
+}
+
+@keyframes clickOpenAni {
+    50%{
+        transform:scale(.50);
+    }
+
+    80%{
+        transform:scale(1.2);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+@keyframes clickCloseAni {
+    50%{
+        transform:scale(.70);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
