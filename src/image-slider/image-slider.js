@@ -1,6 +1,6 @@
 const selectedImage = document.getElementsByClassName('selected-img')[0];
-const lastImage = document.getElementsByClassName('prev-img')[0];
-const nextImage = document.getElementsByClassName('next-img')[0];
+const leftImage = document.getElementsByClassName('prev-img')[0];
+const rightImage = document.getElementsByClassName('next-img')[0];
 const slideBtns = document.getElementsByClassName('slide-btn');
 
 
@@ -20,35 +20,73 @@ const imageFrame = (() => {
     let index = 0;
     let lastIndex = null;
     setImage(selectedImage,index);
-    setImage(lastImage, shift('left'));
-    setImage(nextImage, shift('right'));
+    setImage(leftImage, shift('left'));
+    setImage(rightImage, shift('right'));
+
 
     function setImage(img,index){
         img.setAttribute('src', imgs[index]);
     }
 
-    function highlight () {
+    function highlightSlideBtn () {
         const lastBtn = slideBtns.item(lastIndex);
         const btn = slideBtns.item(index);
-     
+          
         if (lastBtn.classList.contains('slide-btn-select')){
             lastBtn.classList.toggle('slide-btn-select');
         }
-        btn.classList.toggle('slide-btn-select');    
+        btn.classList.toggle('slide-btn-select');   
     }
+
+
+    function activateImageAnimation(direction){
+
+        const duration = 400;
+        if (direction == 'right')
+        {
+            leftImage.classList.add('pictureCloseToLeft');
+            setTimeout(() => {
+                leftImage.classList.remove('pictureCloseToLeft');
+            },duration);
+
+            selectedImage.classList.add('pictureOpenFromRight');
+            setTimeout(() => {
+                selectedImage.classList.remove('pictureOpenFromRight');
+            },duration);
+        }
+        else
+        {
+            rightImage.classList.add('pictureCloseToRight');
+            setTimeout(() => {
+                rightImage.classList.remove('pictureCloseToRight');
+            },duration);
+
+            selectedImage.classList.add('pictureOpenFromLeft');
+            setTimeout(() => {
+                selectedImage.classList.remove('pictureOpenFromLeft');
+            },duration);
+        }
+    }
+
 
     function changeImage(direction, num=null){
         lastIndex = index;
         if (num != null){
             index = num;
+            if (lastIndex < num){
+                direction = 'right';
+            } else {
+                direction = 'left';
+            }
         } else{
             index = shift(direction);
         } 
 
-        highlight();
+        highlightSlideBtn();
         setImage(selectedImage,index);
-        setImage(lastImage, shift('left'));
-        setImage(nextImage, shift('right'));
+        setImage(leftImage, shift('left'));
+        setImage(rightImage, shift('right'));
+        activateImageAnimation(direction);
     }
 
     function shift(direction){
